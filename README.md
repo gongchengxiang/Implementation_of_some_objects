@@ -1,0 +1,2 @@
+# Implementation_of_some_objects
+一些方法及对象的代码实现
