@@ -1,5 +1,5 @@
 # Implementation_of_some_objects
-一些方法及对象的代码实现
+一些方法及对象的代码实现 
 
 ## 仿写Promise对象
 ## 斐波那契数列实现
