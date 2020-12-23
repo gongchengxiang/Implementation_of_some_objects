@@ -1,10 +1,16 @@
 const ajax = function (name){
-  return new Promise((resolve)=>{
+  return new Promise((resolve,reject)=>{
     console.log(name+'开始执行')
     setTimeout(()=>{
-      console.log(name+'执行结束')
-      resolve()
-    }, 5000)
+     
+      if(Math.random()>=0.5){
+        console.log(name+'执行结束:success')
+        resolve()
+      }else{
+        console.log(name+'执行结束:error')
+        reject()
+      }
+    }, 1000)
   })
 }
 
@@ -33,7 +39,10 @@ const fn3 = (params) =>{
 function fnList(...fnlist){
   let sequence = Promise.resolve('start');
   fnlist.forEach(fn=>{
-    sequence = sequence.then(fn);
+    sequence = sequence.then(fn).catch(err=>{
+      console.log(err)
+      throw new Error(err)
+    })
   })
 }
 
